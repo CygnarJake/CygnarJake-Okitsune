@@ -18,7 +18,7 @@ c. Allow the game to finish updating.
 
 ### 2. Download the installer.
 a. Right-click the icon again in your Steam library and select **“Manage” → “Browse local files”**.<br>
-b. Download the installer and place it inside the game’s main folder: **`古今東西おきつね物語`** or **`古今東西おきつね物語 Demo`**.
+b. Download the installer `NTOT_Mod_Setup.exe` and place it inside the game’s main folder: **`古今東西おきつね物語`** or **`古今東西おきつね物語 Demo`**.
 
 
 ### 3. Run the installer.
