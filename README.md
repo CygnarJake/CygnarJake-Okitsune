@@ -39,12 +39,14 @@ c. Allow the installer to finish. Once it has, you’re done!
 4. Toggle the UI on/off. The default key is TAB.<br>
 5. All official translations are included, as well as fan-made Korean and Spanish versions. Easily switch between languages from the options window.<br>
 	- *Additional text/translations have been added, such as for bosses’ spoken words during battles.*<br>
+	- *Some refinements have been made to the English version.*<br>
 6. Numerous bug fixes and performance improvements.<br>
 	- *Ability to manually set the rendering mode.*
 
 ---
 
 ## Planned Updates
+**(Unordered)**<br>
 1. A Portuguese translation is planned. Currently, image assets have been created, but the majority of the game's text will need to be translated.
 2. Translation of outfit descriptions (which are currently only in English).
 3. Currently, all outfits still need many sprites to be made for them to be complete.
