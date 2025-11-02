@@ -1,5 +1,5 @@
 # CygnarJake's Okitsune
-My modified version of Nine-Tailed Okitsune Tale. Includes many bug fixes, a few new features, and easy language swapping.
+My modified version of Nine-Tailed Okitsune Tale. Includes many bug fixes, a few new features, and easy language swapping. Supported languages are: Japanese, English, Spanish, Portuguese (w.i.p), Korean, Simplified Chinese.
 
 ## Table of Contents
 - [Installation Instructions](#installation-instructions)
