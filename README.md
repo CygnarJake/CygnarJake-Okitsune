@@ -10,10 +10,12 @@ My modified version of Nine-Tailed Okitsune Tale. Includes many bug fixes, a few
 
 ## Installation Instructions
 
-### 1. Preset the game's language to Japanese.
+### 1. Configure the game's language to English or Japanese.
 a. Right-click the icon of **Nine-Tailed Okitsune Tale** in your Steam library.<br>
-b. Select **“Properties”**. In **“General”**, set the language to **Japanese**.<br>
+b. Select **“Properties”**. In **“General”**, ensure the language is set the language to **English** or **Japanese**.<br>
 c. Allow the game to finish updating.
+
+> The installer is not able to perform an installation of the commercial version's files to the Simplified Chinese version of the game. To play the Simplified Chinese version of the game with this mod, do the installation as described above, then you will be able to set the language from the options window in-game.
 
 
 ### 2. Download the installer.
