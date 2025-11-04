@@ -15,7 +15,7 @@ a. Right-click the icon of **Nine-Tailed Okitsune Tale** in your Steam library.<
 b. Select **“Properties”**. In **“General”**, ensure the language is set the language to **English** or **Japanese**.<br>
 c. Allow the game to finish updating.
 
-> The installer is not able to perform an installation of the commercial version's files to the Simplified Chinese version of the game. To play the Simplified Chinese translation of the full commercial game with this mod, do the installation as described above, then you will be able to set the language from the options window in-game.
+> The installer is not able to perform an installation of the commercial version's files to the Simplified Chinese version of the game. To play the Simplified Chinese translation of the full commercial game with this mod, do the installation as described here, then you will be able to set the language from the options window in-game.
 
 
 ### 2. Download the installer.
