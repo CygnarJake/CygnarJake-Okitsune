@@ -55,7 +55,6 @@ c. Allow the installer to finish. Once it has, you’re done!
 4. 99% of the installer's size is from images, most of which are for the outfit plugin. I might create a "light" version of the installer where the outfit feature is disabled.
 5. To try to make the mod easy to update. Currently, if I push an update and people want the new files, they'll have to reset their files to the vanilla Japanese version and redo the install.
 6. I’m making an interactable dictionary that will be inside Chabashira’s terakoya. It’ll have entries for the numerous Japanese terms found throughout the game.
-7. I have an idea for a cutscene that could play during the credits. It'll be similar to the Nanahira music video.
 
 ### Known Bugs
 1. The audio can cut out at times, especially if it's been running for a while. This is a problem in the vanilla game as well. Unfortunately, from what I've looked into this might be an issue with RPG Maker games and Nvidia, so I'm not sure there's anything I can do about it. If I can fix it though, I'll try.

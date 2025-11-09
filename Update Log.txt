@@ -1,2 +1,5 @@
+11/08/2025
+	- Created a video cutscene that plays during the credits after the Gojinkasai. It resembles the Maimai version of お願い！コンコンお稲荷さま.
+
 11/04/2025
 	- Added "Voice Volume" to the options menu, which will affect the volume of voice sound effects.
