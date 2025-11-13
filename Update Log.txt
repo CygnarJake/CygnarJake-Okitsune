@@ -1,3 +1,8 @@
+11/12/2025
+	- Fixed plugin parameter mistake causing some movement routes to halt during events.
+	- Fixed plugin parameter mistake preventing language specific files in img>pictures from appearing.
+	- Fixed a mistake concerning the Lost Forest in the demo version.
+
 11/08/2025
 	- Created a video cutscene that plays during the credits after the Gojinkasai. It resembles the Maimai version of お願い！コンコンお稲荷さま.
 
