@@ -199,7 +199,6 @@
     // --- Channel array (sorted, gaps removed)
     const CHANNELS = JSON.parse(P.Channels || '[]')
         .map(s => JSON.parse(s))
-        // keep every entry that has a numeric index (0,1,2,…)
         .filter(c => !isNaN(Number(c.index)))
         .sort((a, b) => a.index - b.index);
 
@@ -217,12 +216,12 @@
     // Unlock hints now per-language:
     const HINT_MAP = {}; // "ch:id" → { [lang]: text }  (per-language)
 
-    // New: per-language display names
+    // Per-language display names
     const DISPLAY_MAP = {}; // "ch:id" → { [lang]: name }  (per-language)
 
     const COVERED_MAP = {}; // chIdx -> Set of basenames
 
-    // ID lists for UI and checks (we’ll compute labels at draw time by language):
+    // ID lists for UI and checks:
     const OUTFIT_IDS = {}; // chIdx -> number[]
     const OUTFIT_META = {}; // chIdx -> [{ id }]    (label computed later)
 
@@ -235,10 +234,8 @@
         if (!dict)
             return '';
         const lang = _currentLanguage();
-        // exact match first
         if (dict[lang])
             return dict[lang];
-        // fallbacks: try English, then first available
         if (dict['English'])
             return dict['English'];
         const keys = Object.keys(dict);
@@ -263,7 +260,6 @@
 
     CHANNELS.forEach(ch => {
         const chIdx = Number(ch.index);
-        // Channel preview: image only
         PREVIEW_MAP[`ch${chIdx}`] = {
             img: ch.preview || ''
         };
@@ -319,7 +315,7 @@
             }
         });
 
-        // Build fast lists for UI (labels computed per-language at draw time)
+        // Build lists for UI (labels computed per-language at draw time)
         const ids = [];
         const meta = [];
         JSON.parse(ch.outfits || '[]')
@@ -358,7 +354,7 @@
     function rememberUnlock(key) {
         if (!ConfigManager.outfitsUnlocked.includes(key)) {
             ConfigManager.outfitsUnlocked.push(key);
-            ConfigManager.save(); // write to config.rpgsave now
+            ConfigManager.save(); // write to config.rpgsave
         }
     }
 
@@ -371,7 +367,7 @@
         let ok = false;
         try {
             ok = !!eval(cond);
-        } // run user condition once
+        }
         catch (e) {
             console.error(e);
         }
@@ -414,7 +410,7 @@
                     this._outfitPrefixes.push(tag);
             }
 
-            // Eligible basenames: union coverage for this channel if it has something selected
+            // Eligible basenames
             const covered = COVERED_MAP[i];
             if (covered && covered.size) {
                 covered.forEach(name => this._outfitEligible.add(name));
@@ -452,14 +448,11 @@
     /* ------------------------------------------------------------------ */
     const fs = (typeof window !== 'undefined' && window.require) ? window.require('fs') : null;
     const path = (typeof window !== 'undefined' && window.require) ? window.require('path') : null;
-
-    // cache for existence checks, and project root path
     const FILE_EXISTS_CACHE = new Map();
     const ROOT_DIR = (path && typeof process !== 'undefined' && process && process.mainModule)
      ? path.dirname(process.mainModule.filename)
      : '';
 
-    // Build safe variants for folder_basename keys
     function _of_keyVariants(subfolder, fname) {
         const key = `${subfolder}_${fname}`;
         const enc = fname
@@ -511,7 +504,7 @@
             return _loadBmp.call(this, folder, filename, hue, smooth);
         }
 
-        // Covered → try active prefixes in priority order
+        // Try active prefixes in priority order
         const build = (pre, f) => {
             const m = /^([!$]{1,2})(.*)$/.exec(f);
             return m ? m[1] + pre + m[2] : pre + f;
@@ -519,11 +512,11 @@
         for (const p of prefixes) {
             const cand = build(p, filename);
             if (this._okFileExists(folder, cand)) {
-                DECISION_CACHE.set(decisionKey, cand); // cache which one we chose
+                DECISION_CACHE.set(decisionKey, cand);
                 return _loadBmp.call(this, folder, cand, hue, smooth);
             }
         }
-        DECISION_CACHE.set(decisionKey, null); // remember base path used
+        DECISION_CACHE.set(decisionKey, null);
         return _loadBmp.call(this, folder, filename, hue, smooth);
 
     };
@@ -546,8 +539,6 @@
     Game_Interpreter.prototype.pluginCommand = function (c, a) {
         _cmd.call(this, c, a);
         const cmd = String(c || '').toLowerCase();
-
-        /* ---------- helpers ---------- */
         const toInt = s => {
             const n = Number(s);
             return Number.isFinite(n) ? Math.floor(n) : NaN;
@@ -719,7 +710,6 @@
         let totalHeight = 0;
         for (let i = 0; i < lines.length; i++) {
             let line = lines[i];
-            // Use YEP_MessageCore word wrap if available
             if (Imported.YEP_MessageCore && Window_Base.prototype.processWordWrap) {
                 let y0 = y + totalHeight;
                 let max = maxWidth || this.contentsWidth();
@@ -1055,7 +1045,7 @@
     //     – never draws blank rows (I hope)
     /* ------------------------------------------------------------------ */
 
-    /* how many rows and items are on one “page” (i.e. in view) */
+    /* how many rows and items are on one page */
     Window_ChannelGrid.prototype.maxPageRows = function () {
         return this.numVisibleRows(); // → 3
     };
@@ -1076,7 +1066,6 @@
         }
     };
 
-    /* hook the four cursor-movement keys so the helper above is called */
     ['cursorDown', 'cursorUp', 'cursorRight', 'cursorLeft'].forEach(fn => {
         const _base = Window_ChannelGrid.prototype[fn];
         Window_ChannelGrid.prototype[fn] = function (wrap) {
@@ -1159,7 +1148,7 @@
 
         /* -------- colour (white / grey) ------------------------------ */
         if (!unlocked) {
-            // locked → always grey
+            // locked, always grey
             this.changeTextColor(this.textColor(8));
         } else {
             // unlocked

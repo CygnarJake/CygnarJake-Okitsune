@@ -1,3 +1,8 @@
+11/16/2025
+	- Organized some image IDs.
+	- Removed some unnecessary files.
+	- Updated README.
+
 11/12/2025
 	- Fixed plugin parameter mistake causing some movement routes to halt during events.
 	- Fixed plugin parameter mistake preventing language specific files in img>pictures from appearing.

@@ -28,7 +28,14 @@ a. Double-click the installer file to begin installation. Follow the messages in
 b. The installer will ask for a password. The password is: **`古今東西おきつね物語`**.<br>
 c. Allow the installer to finish. Once it has, you’re done!
 
-> You may delete the installer if you wish.
+> You may delete the installer if you wish.<br>
+
+Additionally, you may download the folder `FILES` and perform a manual install. Download `FILES`, then copy&paste the files of each subfolder into their respective equivalents of `www`, overwriting the previous versions. `libGLESv2.dll` goes directly into `www`. Note, however, `FILES` does not contain all of the necessary files for the full version of the game, only the demo version.
+
+### Update Instructions
+1. Make sure to backup your www\save folder. You won’t have to delete it to update the mod, but it’s a good idea to save a copy of it just in case.
+2. Most likely, updated files will be able to be found in the `FILES` folder. Download it, and copy&paste the files from its subfolders into www’s versions, overwriting the previous ones.
+3. Otherwise, you can delete the folders in www (other than ‘save’), verify the integrity of your files through Steam, then download the new version of the installer and run it.
 
 ---
 
@@ -53,8 +60,7 @@ c. Allow the installer to finish. Once it has, you’re done!
 2. Translation of outfit descriptions (which are currently only in English).
 3. Currently, all outfits still need many sprites to be made for them to be complete.
 4. 99% of the installer's size is from images, most of which are for the outfit plugin. I might create a "light" version of the installer where the outfit feature is disabled.
-5. To try to make the mod easy to update. Currently, if I push an update and people want the new files, they'll have to reset their files to the vanilla Japanese version and redo the install.
-6. I’m making an interactable dictionary that will be inside Chabashira’s terakoya. It’ll have entries for the numerous Japanese terms found throughout the game.
+5. I’m making an interactable dictionary that will be inside Chabashira’s terakoya. It’ll have entries for the numerous Japanese terms found throughout the game.
 
 ### Known Bugs
 1. The audio can cut out at times, especially if it's been running for a while. This is a problem in the vanilla game as well. Unfortunately, from what I've looked into this might be an issue with RPG Maker games and Nvidia, so I'm not sure there's anything I can do about it. If I can fix it though, I'll try.

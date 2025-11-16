@@ -52,7 +52,7 @@
 
     const PLUGIN_NAME = "Okitsune_Kokkuri-san";
 
-    // === Kokkuri visual tweaks (edit these) ===
+    // === Kokkuri visuals ===
     const KOKKURI_BG_ALPHA = 0.95; // 0.0–1.0 opacity for BOTH images
     const KOKKURI_TEXT_COLOR = '#FFFFFF'; // board (hiragana/number) text color
     const KOKKURI_ENTRY_TEXT_COLOR = '#FFFFFF'; // top entry text color (when not flashing)
@@ -60,7 +60,7 @@
     // ==========================================
 
     // --------------------------
-    // Parameter parsing (with deep JSON parsing for struct arrays)
+    // Parameter parsing
     // --------------------------
     function parseParam(param) {
         try {
@@ -68,10 +68,9 @@
             if (Array.isArray(data)) {
                 return data.map(e => {
                     const obj = JSON.parse(e);
-                    // Script param is stored as a multi-line string in a note field -> keep raw if parse fails
                     if (typeof obj.Script === "string" && obj.Script.startsWith("\"")) {
                         try {
-                            obj.Script = JSON.parse(obj.Script); // unwrap quotes from @type note
+                            obj.Script = JSON.parse(obj.Script);
                         } catch (_) { /* keep raw */
                         }
                     }
@@ -112,12 +111,7 @@
         "かきくけこ", // 9) k column
         "あいうえお" // 10) vowels
     ];
-
-    // Bottom row digits (half-width, 0–9)
     const NUMS = "0123456789";
-
-    // We build a flat symbol list for a 10-column grid.
-    // Each entry is an object: { text: "あ", enabled: true } or { text: "", enabled: false } for spacers.
     function spacer() {
         return {
             text: "",
@@ -146,7 +140,7 @@
         list.push(cell(TILE_YES)); // 8
         list.push(spacer()); // 9
 
-        // Middle grid (columns laid left→right, fill top→bottom)
+        // Middle grid
         const cols = COLS.map(s => s.split(""));
         const maxH = Math.max.apply(null, cols.map(c => c.length));
         for (let row = 0; row < maxH; row++) {
@@ -156,7 +150,7 @@
             }
         }
 
-        // Bottom row (10 columns): 0–9
+        // Bottom row: 0–9
         for (let i = 0; i < 10; i++) {
             list.push(cell(NUMS[i]));
         }
@@ -166,10 +160,10 @@
 
     const SYMBOL_OBJS = buildSymbolObjects();
 
-    // Attach a picture as a window background (fills the whole window)
+    // Attach a picture as a window background
     function _attachWindowPictureBg(win, pictureName) {
-        win.frameOpacity = 0; // hide frame
-        win.backOpacity = 0; // hide fill rectangle
+        win.frameOpacity = 0;
+        win.backOpacity = 0;
 
         const bmp = ImageManager.loadPicture(pictureName);
         const spr = new Sprite(bmp);
@@ -190,7 +184,6 @@
         else
             bmp.addLoadListener(fit);
 
-        // ensure background sits behind text/cursor
         win.addChildAt(spr, 0);
     }
 
@@ -238,26 +231,23 @@
         this._boardWindow.setHandler("ok", this.onBoardOk.bind(this));
         this._boardWindow.setHandler("cancel", this.onCancel.bind(this));
         this.addWindow(this._boardWindow);
-
-        // Skip blanks: start on the first enabled cell, then activate
         this._boardWindow.activate();
         this._boardWindow.selectFirstEnabled();
     };
 
     Scene_KokkuriSan.prototype.onBoardOk = function () {
         const sym = this._boardWindow.currentSymbol();
-        if (sym === TILE_NO) { // いいえ = clear text
+        if (sym === TILE_NO) {
             SoundManager.playCancel();
             this._currentText = "";
             this._inputWindow.setText(this._currentText);
             this._boardWindow.activate();
             return;
         }
-        if (sym === TILE_YES) { // はい = submit / try match
+        if (sym === TILE_YES) {
             this.trySubmit();
             return;
         }
-        // Append normal character if under max length
         if (this._currentText.length >= MAX_LEN) {
             SoundManager.playBuzzer();
         } else {
@@ -283,9 +273,9 @@
         const hit = ENTRIES.find(e => e.text === entered);
         if (hit && hit.script) {
             try {
-                // Execute script in global context
+                // Execute script
                 new Function(hit.script)();
-                // Play any sound you like later; placeholder for now:
+                // Play sound
                 SoundManager.playLoad();
                 // Flash the entered text blue, then clear it and continue
                 this._inputWindow.flashBlueThen(() => {
@@ -296,7 +286,6 @@
                 console.error(`${PLUGIN_NAME}: script error for text "${hit.text}"`, err);
                 SoundManager.playBuzzer();
             }
-            // Stay in this scene; let the player keep entering text
             this._boardWindow.activate();
         } else {
             // No match
@@ -306,7 +295,7 @@
     };
 
     // --------------------------
-    // Window: Input (shows current text)
+    // Window: Input
     // --------------------------
     function Window_KokkuriInput() {
         this.initialize.apply(this, arguments);
@@ -316,8 +305,8 @@
 
     Window_KokkuriInput.prototype.initialize = function (x, y, w, h) {
         Window_Base.prototype.initialize.call(this, x, y, w, h);
-        this.opacity = 0; // <-- make window fully transparent
-        this.contentsOpacity = 255; // keep text visible
+        this.opacity = 0;
+        this.contentsOpacity = 255;
         _attachWindowPictureBg(this, "Kokkuri-san_Top");
         this._text = "";
         this.refresh();
@@ -332,9 +321,8 @@
 
     // In Window_KokkuriInput:
     Window_KokkuriInput.prototype.flashBlueThen = function (callback) {
-        // You will pick the exact color/sfx later; these are placeholders.
         this._kokkuriTintColor = '#4aa3ff';
-        this._kokkuriFlashTimer = 30; // ~0.5s at 60fps
+        this._kokkuriFlashTimer = 30; // frames
         this._kokkuriAfter = callback;
         this.refresh();
     };
@@ -344,12 +332,11 @@
         if (this._kokkuriFlashTimer > 0) {
             this._kokkuriFlashTimer--;
             if (this._kokkuriFlashTimer === 0) {
-                // end of flash
                 this._kokkuriTintColor = null;
                 const cb = this._kokkuriAfter;
                 this._kokkuriAfter = null;
                 if (cb)
-                    cb(); // e.g., clear the text
+                    cb();
                 this.refresh();
             }
         }
@@ -358,19 +345,13 @@
     Window_KokkuriInput.prototype.refresh = function () {
         this.contents.clear();
         const prevSize = this.contents.fontSize;
-
-        // Use flash tint if set, otherwise the normal entry color
         this.changeTextColor(this._kokkuriTintColor || KOKKURI_ENTRY_TEXT_COLOR);
-
-        this.contents.fontSize = KOKKURI_ENTRY_FONT_SIZE; // bigger entry text
+        this.contents.fontSize = KOKKURI_ENTRY_FONT_SIZE;
         this.drawText(this._text, 0, 0, this.contents.width, "center");
-
-        // restore
         this.contents.fontSize = prevSize;
         this.resetTextColor();
     };
 
-    // --- icon helpers (MV uses 32x32 by default) ---
     function _kokkuriIconSize() {
         return {
             w: Window_Base._iconWidth,
@@ -394,7 +375,7 @@
     }
 
     // --------------------------
-    // Window: Board (grid of selectable symbols)
+    // Window: Board
     // --------------------------
     function Window_KokkuriBoard() {
         this.initialize.apply(this, arguments);
@@ -409,13 +390,12 @@
         this.contentsOpacity = 255;
         _attachWindowPictureBg(this, "Kokkuri-san_Bottom");
 
-        // --- cursor icon overlay (icon 41) ---
-        this._cursorIconIndex = 41; // <- your requested icon
+        this._cursorIconIndex = 41;
         this._cursorIconSprite = new Sprite(_kokkuriIconSet());
         const f = _kokkuriIconFrame(this._cursorIconIndex);
         this._cursorIconSprite.setFrame(f.sx, f.sy, f.sw, f.sh);
-        this._cursorIconSprite.anchor.set(0.5, 0.5); // center on the cell
-        this.addChild(this._cursorIconSprite); // add above contents/cursor
+        this._cursorIconSprite.anchor.set(0.5, 0.5);
+        this.addChild(this._cursorIconSprite);
 
         this.refresh();
     };
@@ -425,7 +405,7 @@
     };
 
     Window_KokkuriBoard.prototype.maxCols = function () {
-        return 10; // fixed 10-column grid
+        return 10;
     };
 
     Window_KokkuriBoard.prototype.spacing = function () {
@@ -467,7 +447,6 @@
         }
     };
 
-    // ---------- Cursor skipping helpers ----------
     Window_KokkuriBoard.prototype._wrapCol = function (col) {
         const cols = this.maxCols();
         return (col + cols) % cols;
@@ -541,7 +520,6 @@
             if (i >= max) {
                 if (!wrap)
                     return from;
-                // wrap to top row in same column
                 r = 0;
                 i = this._rcToIndex(r, c);
             }
@@ -565,7 +543,6 @@
             if (r < 0) {
                 if (!wrap)
                     return from;
-                // wrap to last row that contains this column
                 r = Math.floor((max - 1) / cols);
             }
             const i = this._rcToIndex(r, c);
@@ -576,7 +553,6 @@
         }
     };
 
-    // Skip blanks on movement
     Window_KokkuriBoard.prototype.cursorRight = function (wrap) {
         if (this.isCursorMovable()) {
             const i = this._nextEnabledRight(this.index(), wrap);
@@ -621,7 +597,6 @@
     };
      */
 
-    // Utility: select first enabled cell (call after create)
     Window_KokkuriBoard.prototype.selectFirstEnabled = function () {
         for (let i = 0; i < this.maxItems(); i++) {
             if (this.isEnabledIndex(i)) {
@@ -640,7 +615,6 @@
         }
         const rect = this.itemRect(i);
         this._cursorIconSprite.visible = true;
-        // center of the cell (relative to window)
         this._cursorIconSprite.x = rect.x + rect.width / 2;
         this._cursorIconSprite.y = rect.y + rect.height / 2;
     };
@@ -651,7 +625,6 @@
             this._updateCursorIconPos();
     };
 
-    // Make sure position updates when selection changes via code
     const _KokBoard_select = Window_KokkuriBoard.prototype.select;
     Window_KokkuriBoard.prototype.select = function (index) {
         _KokBoard_select.call(this, index);
