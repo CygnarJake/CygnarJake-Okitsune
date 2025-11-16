@@ -30,7 +30,8 @@ c. Allow the installer to finish. Once it has, you’re done!
 
 > You may delete the installer if you wish.<br>
 
-Additionally, you may download the folder `FILES` and perform a manual install. Download `FILES`, then copy&paste the files of each subfolder into their respective equivalents of `www`, overwriting the previous versions. `libGLESv2.dll` goes directly into `www`. Note, however, `FILES` does not contain all of the necessary files for the full version of the game, only the demo version.
+### Manual Installation
+You may download the folder `FILES` and perform a manual install. Download `FILES`, then copy&paste the files of each subfolder into their respective equivalents of `www`, overwriting the previous versions. `libGLESv2.dll` goes directly into `www`. Note, however, `FILES` does not contain all of the necessary files for the full version of the game, only the demo version.
 
 ### Update Instructions
 1. Make sure to backup your www\save folder. You won’t have to delete it to update the mod, but it’s a good idea to save a copy of it just in case.
