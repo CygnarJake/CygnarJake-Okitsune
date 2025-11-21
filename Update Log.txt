@@ -1,3 +1,6 @@
+11/20/2025
+	- Minor change in the Spanish translation.
+
 11/16/2025
 	- Organized some image IDs.
 	- Removed some unnecessary files.
