@@ -2064,7 +2064,7 @@ OKITSUNE: New/Patch code below.
   // --------------------------------------------------------------
   // React every time the language changes
   // --------------------------------------------------------------
-  delete ConfigManager.language;                       // remove earlier defs
+  delete ConfigManager.language;
   Object.defineProperty(ConfigManager, 'language', {
       configurable: true,
       get: function () { return this._language || 0; },
@@ -2078,7 +2078,7 @@ OKITSUNE: New/Patch code below.
 
 })(SRD.TranslationEngine);
 
-// === Currency Unit Patch ===
+// === Currency Unit ===
 (function() {
   var currencyUnits = {
     "日本語":     "銭",

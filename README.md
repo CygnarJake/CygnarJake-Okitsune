@@ -58,13 +58,13 @@ You may download the folder `FILES` and perform a manual install. Download `FILE
 ## Planned Updates
 **(Unordered)**<br>
 1. A Portuguese translation is planned. Currently, image assets have been created, but the majority of the game's text will need to be translated.
-2. Translation of outfit descriptions (which are currently only in English).
-3. Currently, all outfits still need many sprites to be made for them to be complete.
-4. 99% of the installer's size is from images, most of which are for the outfit plugin. I might create a "light" version of the installer where the outfit feature is disabled.
-5. I’m making an interactable dictionary that will be inside Chabashira’s terakoya. It’ll have entries for the numerous Japanese terms found throughout the game.
+2. Currently, all outfits still need many sprites to be made for them to be complete.
+3. I’m making an interactable dictionary that will be inside Chabashira’s terakoya. It’ll have entries for the numerous Japanese terms found throughout the game.
+4. Possibly revamping fishing and digging. Had some ideas for a fishing leveling system.
 
 ### Known Bugs
 1. The audio can cut out at times, especially if it's been running for a while. This is a problem in the vanilla game as well. Unfortunately, from what I've looked into this might be an issue with RPG Maker games and Nvidia, so I'm not sure there's anything I can do about it. If I can fix it though, I'll try.
+2. I've had a crash reported to me, `Cannot read property 'resolution' of undefined`. I've not been able to replicate this, but my guess is that it's correlated with `[Violation] 'requestAnimationFrame' handler took ...ms`. I'll see what I can do.
 
 ---
 

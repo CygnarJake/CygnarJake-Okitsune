@@ -1,3 +1,10 @@
+11/29/2025
+	- Fixed some issues with event and character movement while the message log is open. Also changed it so that it can't open during Kokuri's battle, but this seems to cause lag when attempting to open it? I'll be looking into this more.
+	- Improved EN, ES, PT versions of hakai11.
+	- Some minor translation updates.
+	- Translated most outfit descriptions.
+	- Cleaned some events and plugins.
+
 11/20/2025
 	- Minor change in the Spanish translation.
 
