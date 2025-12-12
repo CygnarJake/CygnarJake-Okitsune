@@ -1,3 +1,22 @@
+12/11/2025
+	- Significant updates to omikuji. Fortunes now last for 30 minutes, and then switches 221-260 will turn off automatically upon the next map transfer. A timer appears in the bottom right corner to show the remaining time. It can be toggled just like the rest of the UI.
+	- Significant updates to fishing. Kohaku can now use the three food items as bait. Bait provides boosts (as "luck") to the fishing minigame. Omikuji also has an effect. I'll most likely make minor adjustments in the future.
+		* No bait (0-2 luck) = mostly vanilla fishing. 1/3 chance to not lure any fish, normal zone (yellow) is a 50/50 between small and normal fish.
+		* Sushi bait (3 luck) = slightly widened normal and critical bars. Will always lure fish and yellow always catches a normal fish.
+		* Sandwich bait (4 luck) = greatly widened normal and critical bars. Will always lure fish and yellow always catches a normal fish.
+		* Dango bait (5 luck) = greatly widened normal bar, critical bar is larger than no bait but smaller than sushi bait. Will always lure fish. Yellow randomly catches three small/normal fish with at least one being normal, and critical randomly catches three normal/big fish with at least one being big.
+		* Kyo omikuji = -1 luck, shoukichi = random +(0 to 1) luck, daikichi = +1 luck. Omikuji cannot boost luck from below 5 to above 5, or from 5 below 5. Omikuji does impact the odds to small/normal fish or normal/big fish when using dango. Default is a 50/50 with each fish, kyo = 75/25, shoukichi = 45/55, daikichi = 25/75.
+	- Significant updates to digging. Omkuji now affects the loot Kohaku can find by digging with their monimole form. Getting a new omikuji resets dirt spots. I may make some adjustment to this in the future as well.
+		* No omikuji = 40% nothing, 60% to find a small coin.
+		* Kyo omikuji = 66.6% nothing, 33.3% small coin.
+		* Shoukichi = 30% nothing, 56% small coin, 14% large coin.
+		* Daikichi = 20% nothing, 40% small coin, 32% large coin, 4% monini leaf, 4% monimole leaf.
+	- Tambo can now unlock the C key transformation shortcut in the post-game.
+	- Added some sound assets (.rpgmvo files) that I noticed were missing in the Chinese version and would cause crashes when they weren't present while trying to play the mod.
+	- Some minor translation changes.
+	
+	- Note: I haven't yet playtested the whole game with these new changes. I'll be doing so soon, but sorry if there is anything that causes issues at the moment.
+
 12/02/2025
 	- Fixed some lag issues between Mano_InputConfig and certain bosses.
 	- Minor translation updates.

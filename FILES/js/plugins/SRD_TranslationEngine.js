@@ -33,9 +33,7 @@
  * @param Language Font Pairs
  * @type struct<LangFontPair>[]
  * @default []
- * @desc Optional.  One entry per language.  Each entry maps a language name
- *       (exactly as it appears in the “Languages” parameter) to a default
- *       font family that should be used whenever that language is active.
+ * @desc One entry per language, map a language name to a font that should be used when that language is active.
  *
  * @help
  * ※This is a modified version by CygnarJake for Nine-Tailed Okitsune Tale
@@ -2167,8 +2165,6 @@ OKITSUNE: New/Patch code below.
   if (typeof window === 'undefined') return;
 
   var TE = (window.SRD && SRD.TranslationEngine) ? SRD.TranslationEngine : null;
-
-  // Find the translate function without guessing internals
   var originalTranslate = null;
   if (TE && typeof TE.translate === 'function') {
     originalTranslate = TE.translate;
@@ -2177,8 +2173,7 @@ OKITSUNE: New/Patch code below.
   }
   if (!originalTranslate) return;
 
-  // LRU cache (Map preserves insertion order in MV's Chromium)
-  var MAX_CACHE = 512; // adjust if needed
+  var MAX_CACHE = 512;
   var cache = new Map(); // key: lang + '\u0000' + text  => value: translated string
   var lastLangKey = null;
 
@@ -2220,39 +2215,28 @@ OKITSUNE: New/Patch code below.
   }
 
   function wrappedTranslate(text){
-    // Detect language change and clear cache if needed
     var lang = getLanguageKey();
     if (lang !== lastLangKey) {
       cache.clear();
       lastLangKey = lang;
     }
-
-    // Fast path: memoized
     var memo = cacheGet(lang, text);
     if (memo != null) return memo;
-
-    // Defer to original; fully preserve context/args
     var out;
     try {
       out = originalTranslate.apply(this, arguments);
     } catch (e) {
-      // If anything odd occurs, do NOT cache the error; just rethrow
       throw e;
     }
-
-    // Store only strings; if plugin returns non-string, just skip caching
     if (typeof out === 'string') cacheSet(lang, text, out);
     return out;
   }
-
-  // Install wrapper in the same place original was found
   if (TE && typeof TE.translate === 'function') {
     TE.translate = wrappedTranslate;
   } else if (typeof window.$ !== 'undefined' && typeof $.translate === 'function') {
     $.translate = wrappedTranslate;
   }
 
-  // Expose a tiny API to flush cache on demand (debugging)
   window.__SRD_TE_TranslationCache = {
     clear: function(){ cache.clear(); },
     size: function(){ return cache.size; },

@@ -50,7 +50,8 @@ You may download the folder `FILES` and perform a manual install. Download `FILE
 5. All official translations are included, as well as fan-made Korean and Spanish versions. Easily switch between languages from the options window.<br>
 	- *Additional text/translations have been added, such as for bosses’ spoken words during battles.*<br>
 	- *Some refinements have been made to the English version.*<br>
-6. Numerous bug fixes and performance improvements.<br>
+6. Fishing and digging have been refreshed from the vanilla game, rewarding the player more and benefitting from omikuji!
+7. Numerous bug fixes and performance improvements.<br>
 	- *Ability to manually set the rendering mode.*
 
 ---
