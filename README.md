@@ -61,7 +61,6 @@ You may download the folder `FILES` and perform a manual install. Download `FILE
 1. A Portuguese translation is planned. Currently, image assets have been created, but the majority of the game's text will need to be translated.
 2. Currently, all outfits still need many sprites to be made for them to be complete.
 3. I’m making an interactable dictionary that will be inside Chabashira’s terakoya. It’ll have entries for the numerous Japanese terms found throughout the game.
-4. Possibly revamping fishing and digging. Had some ideas for a fishing leveling system.
 
 ### Known Bugs
 1. The audio can cut out at times, especially if it's been running for a while. This is a problem in the vanilla game as well. Unfortunately, from what I've looked into this might be an issue with RPG Maker games and Nvidia, so I'm not sure there's anything I can do about it. If I can fix it though, I'll try.

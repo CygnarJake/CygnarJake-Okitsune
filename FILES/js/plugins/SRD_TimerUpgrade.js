@@ -667,12 +667,37 @@ OKITSUNE: New/Patch code below.
 -----------------------------------------------------------------------------------------------------------------------------
 */
 
-(function() {
+(function () {
     const _createTimer = Scene_Base.prototype.createTimer;
-    Scene_Base.prototype.createTimer = function() {
+    Scene_Base.prototype.createTimer = function () {
         _createTimer.call(this);
         if (this._timerSprite) {
             this._timerSprite.visible = !$gameSwitches.value(11);
+        }
+    };
+})();
+
+(function () {
+    const _createTimer = Scene_Map.prototype.createTimer;
+    Scene_Map.prototype.createTimer = function () {
+        _createTimer.call(this);
+        if (this._timerSprite && this._spriteset) {
+
+            // Remove existing timer sprites from the spriteset.
+            const ss = this._spriteset;
+            for (let i = ss.children.length - 1; i >= 0; i--) {
+                if (ss.children[i]instanceof Sprite_Timer) {
+                    ss.removeChildAt(i);
+                }
+            }
+
+            // Remove from scene root if still present there.
+            if (this.children.contains(this._timerSprite)) {
+                this.removeChild(this._timerSprite);
+            }
+
+            // Insert timer below pictures but above tilemap.
+            this._spriteset.addChildAt(this._timerSprite, 1);
         }
     };
 })();

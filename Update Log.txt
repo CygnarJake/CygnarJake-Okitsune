@@ -1,3 +1,9 @@
+12/15/2025
+	- Some changes to how omikuji affects fishing.
+	- Some fixes with the Omikuji timer's display.
+	- Other small fixes here and there.
+	- Patched a missing translation for one of Chiahru's event pages.
+
 12/11/2025
 	- Significant updates to omikuji. Fortunes now last for 30 minutes, and then switches 221-260 will turn off automatically upon the next map transfer. A timer appears in the bottom right corner to show the remaining time. It can be toggled just like the rest of the UI.
 	- Significant updates to fishing. Kohaku can now use the three food items as bait. Bait provides boosts (as "luck") to the fishing minigame. Omikuji also has an effect. I'll most likely make minor adjustments in the future.
