@@ -1,3 +1,7 @@
+12/16/2025
+	- Added the outfit of Niko from OneShot for Kohaku and for Kokuri.
+	- Fixed the Kokkuri-san minigame only displaying "?" in the Korean version.
+
 12/15/2025
 	- Some changes to how omikuji affects fishing.
 	- Some fixes with the Omikuji timer's display.

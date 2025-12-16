@@ -53,7 +53,7 @@
     const PLUGIN_NAME = "Okitsune_Kokkuri-san";
 
     // === Kokkuri visuals ===
-    const KOKKURI_BG_ALPHA = 0.95; // 0.0–1.0 opacity for BOTH images
+    const KOKKURI_BG_ALPHA = 0.95; // 0.0–1.0 opacity for both images
     const KOKKURI_TEXT_COLOR = '#FFFFFF'; // board (hiragana/number) text color
     const KOKKURI_ENTRY_TEXT_COLOR = '#FFFFFF'; // top entry text color (when not flashing)
     const KOKKURI_ENTRY_FONT_SIZE = 36; // top entry text font size
@@ -91,6 +91,11 @@
                 text: (e.Text || "").trim(),
                 script: (e.Script || "")
             }));
+
+    function resolveEntryText(text) {
+        const w = new Window_Base(0, 0, 0, 0);
+        return w.convertEscapeCharacters(text);
+    }
 
     // --------------------------
     // Characters & board builder
@@ -270,7 +275,7 @@
             this._boardWindow.activate();
             return;
         }
-        const hit = ENTRIES.find(e => e.text === entered);
+        const hit = ENTRIES.find(e => resolveEntryText(e.text) === entered);
         if (hit && hit.script) {
             try {
                 // Execute script
