@@ -1,3 +1,8 @@
+12/27/2025
+	- Did some work on creating the Portuguese translation. Still much to do.
+	- Some tweaks to the Spanish translation.
+	- Modified the event that handles the scene of Shirasame and Koyuki's reunion to have Kokuri very briefly be seen walking into the onsen at the end if Kohaku's not yet found him in there.
+
 12/16/2025
 	- Added the outfit of Niko from OneShot for Kohaku and for Kokuri.
 	- Fixed the Kokkuri-san minigame only displaying "?" in the Korean version.
