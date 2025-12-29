@@ -1,3 +1,6 @@
+12/29/2025
+	- Added a 'light' version of the installer. The difference is that the light version does not contain outfit images or the Gonjinkasai cutscene movie. This cuts the download size in half.
+
 12/27/2025
 	- Did some work on creating the Portuguese translation. Still much to do.
 	- Some tweaks to the Spanish translation.

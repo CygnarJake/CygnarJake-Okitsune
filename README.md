@@ -20,7 +20,9 @@ c. Allow the game to finish updating.
 
 ### 2. Download the installer.
 a. Right-click the icon again in your Steam library and select **“Manage” → “Browse local files”**.<br>
-b. Download the installer `(NTOT-Mod-Setup)` and place it inside the game’s main folder: **`古今東西おきつね物語`** or **`古今東西おきつね物語 Demo`**.
+b. Download the installer `(NTOT-Mod-Setup).exe` and place it inside the game’s main folder: **`古今東西おきつね物語`** or **`古今東西おきつね物語 Demo`**.
+
+> `(NTOT-Mod-Setup) Light.exe` does not include unlockable character outfit images or the custom Gojinkasai cutscene made for this mod. Excluding these reduces the installer size to half its original. All files can be found in and replaced from the `FILES` folder on this GitHub page.
 
 
 ### 3. Run the installer.
