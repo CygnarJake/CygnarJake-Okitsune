@@ -1,3 +1,14 @@
+01/01/2026
+	- Tried to improve enemy pathing and general hit detection.
+		* They'll now try to return to their patrol path when hit out of it.
+		* Took off most KMS 2x2 event areas, but hitting them should work as usual.
+		* Them hitting Kohaku can be a little weird. They'll now attack Kohaku if Kohaku's in their way rather than just stand still. Although, Kohaku can almost be inside enemies at times if your just standing still. I'll have to see if messing with area event comments can improve anything further.
+		* Made monimole's left facing-attack reach 4 tiles like its right-facing attack. Did the same for Tamamo's attack.
+		* Optimized all of Kohaku's attack events a bit.
+		* Switched most chests from KMS 3x2 event areas to YEP event squares.
+	- The game title now changes based on which language the game is set to.
+	- Fixed the leaf-throwing animation in Risen's battle when he goes from his second phase to his final phase.
+
 12/29/2025
 	- Added a 'light' version of the installer. The difference is that the light version does not contain outfit images or the Gonjinkasai cutscene movie. This cuts the download size in half.
 
