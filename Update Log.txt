@@ -1,3 +1,6 @@
+02/15/2026
+	- Enabled MadeWithMv. Forgot to turn it back on in yesterday's update, oops.
+
 02/14/2026
 	- In the Lost Forest, patterns for the blue flowers, pink birds, and first three clock times are now random.
 	- Fixed an issue where text center tags were not applied correctly after using the message log.
