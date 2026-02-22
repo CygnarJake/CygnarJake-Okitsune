@@ -1,0 +1,119 @@
+02/21/2026
+	- Simplified some common events and replaced multiple ConfigManager.getLanguage() switch-case blocks with more scalable translation logic.
+	- Game_Map.prototype.updateEvents is no longer erased and redefined within scripts.
+
+02/15/2026
+	- Enabled MadeWithMv. Forgot to turn it back on in yesterday's update, oops.
+
+02/14/2026
+	- In the Lost Forest, patterns for the blue flowers, pink birds, and first three clock times are now random.
+	- Fixed an issue where text center tags were not applied correctly after using the message log.
+	- Cleaned some code, and doing more of this will be the focus for the immediate future.
+	- Greatly expanded the dictionary.
+
+02/02/2026
+	- Started work on a dictionary within the terakoya. Still have some entries to make and it's only in English for the moment.
+
+01/27/2026
+	- Fixed some issues with Risen's Kohaku copy. I didn't do the punch quite right the first time.
+	- Made changes to monini paths and how thiers and monimoles' are worked out.
+	- Added a new "Unstuck" keybind which will hopefully be able to fix Kohaku sometimes freezing when using pre-modded saves. The bug is very inconsistent so I haven't actually been able to confirm this solution works. WIll continue to try to diagnose and make the best solution.
+
+01/22/2026
+	- Improved spirits' boss fights.
+		* Kohaku will now take a point of damage if they're walking for too long under the influence of Kosen's spell. Footsteps that become progressively more red will indicate how near Kohaku is to taking damage. Might tweek the rate a bit in future updates.
+		* Kuusen's mushroom and flowers can now spawn in different places. Placement is randomized.
+		* Risen's copy of Kohaku mimics Kohaku better and will also eat food items.
+	- Fixed footsteps in snow not appearing. My bad I broke them a while ago and didn't notice oops
+	- Redid my makeover of fishing a bit. Sandwiches now have a chance to attract a second fish in the water after fishing with them.
+	- Increased maximum saves from 7 to 99. Having many can cause a bit of a lag spike when navigating to the load and save scenes, so an advisory has been made which appears when savign to slot numbers more than 20.
+
+01/08/2026
+	- Fixed a bug testing page I accidentally left in an event.
+	- Minor tweaks to enemies' receive damage events.
+	
+01/06/2026
+	- Reworked the final boss battle a bit. All 8 foxes can now appears rather than only the previous 4. Attack pattern during phase 4 is a bit differnt.
+	- Leaves and coins dropped my mobs will now be erased on pick-up, rather than moved to (0,0).
+	- The torches you can light while in Tamamo form are no longer 0-delay parallel events.
+	- Put in Korean and Simplified Chinese translations for spoken boss text.
+	- Pink bird enemies now have more consistent direction-facing logic.
+
+01/01/2026
+	- Tried to improve enemy pathing and general hit detection.
+		* They'll now try to return to their patrol path when hit out of it.
+		* Took off most KMS 2x2 event areas, but hitting them should work as usual.
+		* Them hitting Kohaku can be a little weird. They'll now attack Kohaku if Kohaku's in their way rather than just stand still. Although, Kohaku can almost be inside enemies at times if your just standing still. I'll have to see if messing with area event comments can improve anything further.
+		* Made monimole's left facing-attack reach 4 tiles like its right-facing attack. Did the same for Tamamo's attack.
+		* Optimized all of Kohaku's attack events a bit.
+		* Switched most chests from KMS 3x2 event areas to YEP event squares.
+	- The game title now changes based on which language the game is set to.
+	- Fixed the leaf-throwing animation in Risen's battle when he goes from his second phase to his final phase.
+
+12/29/2025
+	- Added a 'light' version of the installer. The difference is that the light version does not contain outfit images or the Gonjinkasai cutscene movie. This cuts the download size in half.
+
+12/27/2025
+	- Did some work on creating the Portuguese translation. Still much to do.
+	- Some tweaks to the Spanish translation.
+	- Modified the event that handles the scene of Shirasame and Koyuki's reunion to have Kokuri very briefly be seen walking into the onsen at the end if Kohaku's not yet found him in there.
+
+12/16/2025
+	- Added the outfit of Niko from OneShot for Kohaku and for Kokuri.
+	- Fixed the Kokkuri-san minigame only displaying "?" in the Korean version.
+
+12/15/2025
+	- Some changes to how omikuji affects fishing.
+	- Some fixes with the Omikuji timer's display.
+	- Other small fixes here and there.
+	- Patched a missing translation for one of Chiahru's event pages.
+
+12/11/2025
+	- Significant updates to omikuji. Fortunes now last for 30 minutes, and then switches 221-260 will turn off automatically upon the next map transfer. A timer appears in the bottom right corner to show the remaining time. It can be toggled just like the rest of the UI.
+	- Significant updates to fishing. Kohaku can now use the three food items as bait. Bait provides boosts (as "luck") to the fishing minigame. Omikuji also has an effect. I'll most likely make minor adjustments in the future.
+		* No bait (0-2 luck) = mostly vanilla fishing. 1/3 chance to not lure any fish, normal zone (yellow) is a 50/50 between small and normal fish.
+		* Sushi bait (3 luck) = slightly widened normal and critical bars. Will always lure fish and yellow always catches a normal fish.
+		* Sandwich bait (4 luck) = greatly widened normal and critical bars. Will always lure fish and yellow always catches a normal fish.
+		* Dango bait (5 luck) = greatly widened normal bar, critical bar is larger than no bait but smaller than sushi bait. Will always lure fish. Yellow randomly catches three small/normal fish with at least one being normal, and critical randomly catches three normal/big fish with at least one being big.
+		* Kyo omikuji = -1 luck, shoukichi = random +(0 to 1) luck, daikichi = +1 luck. Omikuji cannot boost luck from below 5 to above 5, or from 5 below 5. Omikuji does impact the odds to small/normal fish or normal/big fish when using dango. Default is a 50/50 with each fish, kyo = 75/25, shoukichi = 45/55, daikichi = 25/75.
+	- Significant updates to digging. Omkuji now affects the loot Kohaku can find by digging with their monimole form. Getting a new omikuji resets dirt spots. I may make some adjustment to this in the future as well.
+		* No omikuji = 40% nothing, 60% to find a small coin.
+		* Kyo omikuji = 66.6% nothing, 33.3% small coin.
+		* Shoukichi = 30% nothing, 56% small coin, 14% large coin.
+		* Daikichi = 20% nothing, 40% small coin, 32% large coin, 4% monini leaf, 4% monimole leaf.
+	- Tambo can now unlock the C key transformation shortcut in the post-game.
+	- Added some sound assets (.rpgmvo files) that I noticed were missing in the Chinese version and would cause crashes when they weren't present while trying to play the mod.
+	- Some minor translation changes.
+	
+	- Note: I haven't yet playtested the whole game with these new changes. I'll be doing so soon, but sorry if there is anything that causes issues at the moment.
+
+12/02/2025
+	- Fixed some lag issues between Mano_InputConfig and certain bosses.
+	- Minor translation updates.
+	- Added some files to the tilesets folder so that the Chinese version is actually playable.
+
+11/29/2025
+	- Fixed some issues with event and character movement while the message log is open. Also changed it so that it can't open during Kokuri's battle, but this seems to cause lag when attempting to open it? I'll be looking into this more.
+	- Improved EN, ES, PT versions of hakai11.
+	- Some minor translation updates.
+	- Translated most outfit descriptions.
+	- Cleaned some events and plugins.
+
+11/20/2025
+	- Minor change in the Spanish translation.
+
+11/16/2025
+	- Organized some image IDs.
+	- Removed some unnecessary files.
+	- Updated README.
+
+11/12/2025
+	- Fixed plugin parameter mistake causing some movement routes to halt during events.
+	- Fixed plugin parameter mistake preventing language specific files in img>pictures from appearing.
+	- Fixed a mistake concerning the Lost Forest in the demo version.
+
+11/08/2025
+	- Created a video cutscene that plays during the credits after the Gojinkasai. It resembles the Maimai version of お願い！コンコンお稲荷さま.
+
+11/04/2025
+	- Added "Voice Volume" to the options menu, which will affect the volume of voice sound effects.

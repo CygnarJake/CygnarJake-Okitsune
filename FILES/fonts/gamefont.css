@@ -1,0 +1,30 @@
+
+@font-face {
+    font-family: GameFont;
+    src: url("font_cn.ttf");
+}
+
+
+@font-face {
+    font-family: GameFont_2;
+    src: url("RiiT_F.otf");
+}
+
+
+@font-face {
+    font-family: GameFont_3;
+    src: url("Wandohope-Bold-MODIFIED.ttf");
+}
+
+@font-face {
+    font-family: GameFont_4;
+    src: url("Chewy-MODIFIED.ttf");
+}
+
+
+.IIV::-webkit-media-controls-play-button,
+video::-webkit-media-controls-start-playback-button {
+    opacity: 0;
+    pointer-events: none;
+    width: 5px;
+}
