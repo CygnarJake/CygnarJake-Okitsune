@@ -82,6 +82,7 @@ All of the files within `古今東西おきつね物語.7z` are the files in the
 2. I've had a crash reported to me, `Cannot read property 'resolution' of undefined`. I've not been able to replicate this, but my guess is that it's correlated with `[Violation] 'requestAnimationFrame' handler took ...ms`. I'll see what I can do.
 3. On rare occasions, Kohaku can become frozen after certain interactions such as cutscenes or being hit by enemies. This appears to occur only when the save you're playing on originated from the umodded vanilla game. For the moment, an "Unstuck" key has been added which will hopefully be able to fix the issue if it occurs to you. "U" is the default on keyboards and "R3" on controllers, but make sure you have it bound before resuming the game from a pre-mod vanilla save. Additionally, teleporting to Henbou Pass so that the monimole at the start hits you can also fix the bug.
 4. Had a crash occur to me during testing of the 05/24/2026 update upon the map transfer to Hyoi Pass during Risen's quest. Have not been able to replicate, will probably get around to repeat-playing the game many times at some point.
+5. Haruchii won't come out of the shrine during Angel's tour of the city. I know why but I won't be able to fix this until mid to late June.
 
 ---
 
