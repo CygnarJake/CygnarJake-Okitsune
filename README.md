@@ -85,6 +85,7 @@ All of the files within `古今東西おきつね物語.7z` are the files in the
 5. Haruchii won't come out of the shrine during Angel's tour of the city. I know why but I won't be able to fix this until mid to late June.
 6. You won't be able to reopen the item selection menu at Kosen's hokora if you cancel out of it. Only way to fix this is to leave the map (teleport back to the start of Hyoi Pass) then walk back. Will also fix this once I get my main computer back in mid to late June.
 7. Some weird zone issues near the dig site in the second half of Hyoi Pass mess with Kohaku's movement in a mild way.
+8. Cheshika's Lost Forest comment about the pink birds won't change after you've slain them.
 
 ---
 
