@@ -87,6 +87,9 @@ All of the files within `古今東西おきつね物語.7z` are the files in the
 7. Some weird zone issues near the dig site in the second half of Hyoi Pass mess with Kohaku's movement in a mild way.
 8. Cheshika's Lost Forest comment about the pink birds won't change after you've slain them.
 9. It's possible to attack when first entering Alice's mushroom house then be visually bugged for the start of the cutscene.
+10. Some of the staircases in the caves might be slightly odd visually.
+11. Possible movement freeze after fishing?
+12. Leaving the message log in the middle of a text box with a 'press to continue' toggle will cause issues.
 
 ---
 
