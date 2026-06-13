@@ -76,6 +76,7 @@ All of the files within `古今東西おきつね物語.7z` are the files in the
 4. Update NW.js version whenever Greenworks is updated. Might look into how to compile the files myself as some basic instructions are given on its GitHub page.
 5. Update PIXI version?? Seems difficult, low priority.
 6. Updating the NW.js version added a fair number of files. I'm not sure they're all necessary, particularly those in the `locales` folder so I'll be combing through them at some point to verify which are actually needed for Nine-Tailed Okitsune Tail to run.
+7. An update for the Korean patch has released. I'll update to the new files as soon as I can.
 
 ### Known Bugs
 1. The audio can cut out at times, especially if it's been running for a while. This is a problem in the vanilla game as well. Unfortunately, from what I've looked into this might be an issue with RPG Maker games and Nvidia, so I'm not sure there's anything I can do about it. If I can fix it though, I'll try.
@@ -90,6 +91,7 @@ All of the files within `古今東西おきつね物語.7z` are the files in the
 10. Some of the staircases in the caves might be slightly odd visually.
 11. Possible movement freeze after fishing?
 12. Leaving the message log in the middle of a text box with a 'press to continue' toggle will cause issues.
+13. The warning about Risen's magic seal in the middle of Henbou Pass still appears once even after defeating him if you hadn't had the interaction with it before.
 
 ---
 
