@@ -1,4 +1,4 @@
-07/05/2026
+07/11/2026
 	- Fixed Kokuri's attacks not affecting Kohaku.
 
 07/05/2026
