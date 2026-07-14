@@ -39,7 +39,7 @@ Select all files in the folder that was extracted from the 7z file. Cut and past
 ### 5. Confirm installation and how to update
 Installation is now complete. On the full version of the game, a popup should appear to inform you that the mod has fully installed. If you own the full version and are not getting a proper install, try deleting all files within `古今東西おきつね物語` (ctrl + a then delete) after backing up `古今東西おきつね物語` > `www` > `save` somewhere else on your computer if you have any save data that you don't want to lose. Then, again verify the integrity of game files by following step 3 a and b. Cut and paste all files from the extracted 7z file once more and try again.
 
-Likewise, if you wish to update the mod to a newer version that I may have released, verify file integrity through Steam, download the new `古今東西おきつね物語.7z`, extract it and cut & paste it once more. The Steam integrity must be verified for any mod updates as the mod will be confused if the vanilla files are not present and default to a demo-version install.
+Likewise, if you wish to update the mod to a newer version that I may have released: verify file integrity through Steam, download the new `古今東西おきつね物語.7z`, extract it and cut & paste it once more. The Steam integrity must be verified for any mod updates as the mod will be confused if the vanilla files are not present and default to a demo-version install.
 
 
 ### Can I use my save file from the vanilla game?
@@ -49,6 +49,9 @@ Also, the correct language-specific images may not activate correctly when you f
 
 ### Other Notes
 All of the files within `古今東西おきつね物語.7z` are the files in the `古今東西おきつね物語` folder on this GitHub page. The 7z file is used as I experienced issues with some of the large files not downloading correctly with GitHub's standard "Download ZIP" from the Code button. If you do not encounter such issues, you could also download that folder directly.<br>
+
+### Outfit List
+If you would like to contribute, Outfit List.txt is a text file listing each image file that characters (currently only Kohaku and Kokuri) appear in and would be expected to have some form of change to them. In the future, I'll update this list to include the rest of the characters and probably format it into something more nice than plain text. I may also create a list listing images with Japanese characters in them in case somebody making translation patch images would like to change them as the Korean version does.
 
 ---
 

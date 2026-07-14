@@ -1,0 +1,82 @@
+=========
+Kohaku
+=========
+www > img > characters
+	!$Gate8.png
+	$1.png, $2.png, $3.png, $4.png
+	$9.png, $10.png, …, $17.png
+	$DMZ.png, $DMZ0.png, $DMZ1.png, …, $DMZ17.png
+	$horu.png, $horu2.png
+	$HUTON2.png
+	$kohaHIMA.png
+	$kohajanp.png, $kohajanp2.png
+	$kohaku%(8).png, $kohaku2%(8).png
+	$kohaku.png
+	$kohaku_dance.png
+	$kohaku1.png, $kohaku2.png, $kohaku3.png, $kohaku4.png
+	$kohakumonini%(8).png, $kohakumonini2%(8).png
+	$kohakumoniniONSEN%(8).png, $kohakumoniniONSEN2%(8).png
+	$kohakuoyu%(8).png
+	$kohakuoyunobo%(8).png
+	$kougeki.png, $kougeki2.png, $kougeki3.png, $kougeki4.png
+	$kougekiHENGE.png, $kougekiHENGE2.png, $kougekiHENGE3.png, …, $kougekiHENGE11.png
+	$kougekiMOGU.png, $kougekiMOGU1.png, $kougekiMOGU2.png, $kougekiMOGU3.png, $kougekiMOGU4.png
+	$minizyannpu.png
+	$MON%(8).png, $MON2%(8).png, $MON3%(8).png, $MON4%(8).png
+	$MONIHENGE.png, $MONIHENGE0.png, $MONIHENGE2.png
+	$osake.png, $osake2.png, $osake3.png, …, $osake6.png
+	$TAMAHENGE.png, $TAMAHENGE2.png, $TAMAHENGE10.png
+	$TAMAMO%(8).png, $TAMAMO2%(8).png
+	$TAMAMOGU.png, $TAMAMOGU2.png
+	$TAMAMOKOUGEKI.png, $TAMAMOKOUGEKI2.png
+	$TURI1.png, $TURI2.png
+	$usamoru.png, $usamoru2.png, $usamoru3.png, $usamoru4.png
+
+www > img > pictures
+	Standing Images
+	Kohaku form: A1.png, A2.png, …, A41.png
+	Monini form: B1.png, B2.png, …, B5.png
+	Monimole form: C1.png, C2.png, C3.png, C4.png
+	Tamamo form: D1.png, D2.png, …, D14.png
+
+	Other
+	10.png
+	ED3.png
+	ED8.png
+	hakai1.png, hakai2.png, …, hakai6.png
+	hakai11.png
+	last.png
+	save1.png
+
+www > img > titles1
+	Mainetitle.png
+	Mainetitle1.png
+	Mainetitle2.png
+	Mainetitle3.png
+
+=========
+Kokuri
+=========
+www > img > characters
+	$E44.png, $E45.png, $E46.png, $E47.png
+	$E53.png, $E54.png
+	$HUTON3.png
+	$item000.png
+	$item00.png
+	$item0.png
+	$item1.png, $item2.png, …, $item6.png
+	$kokuri%(8).png
+
+www > img > picture
+	Standing Images
+	T1.png, T2.png, …, T24.png
+
+	Other
+	ED6.png
+	hakai7.png, hakai8.png, …, hakai11.png
+
+www > img > titles1
+	Mainetitle.png
+	Mainetitle1.png
+	Mainetitle2.png
+	Mainetitle3.png
