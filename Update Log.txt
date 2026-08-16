@@ -1,3 +1,7 @@
+08/16/2026
+	- Fixed issue with the custom Gojinkasai cutscene caused by JavaScript version revert.
+	- Updated Korean and Chinese text for boss voice lines.
+
 08/14/2026
 	- Map transfer into the Lost Forest in the full version should now be fixed.
 

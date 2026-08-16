@@ -18,7 +18,7 @@ If you don't already have it, install 7-Zip at https://www.7-zip.org/. Many tuto
 
 ### 2. Download and extract 古今東西おきつね物語.7z
 From this GitHub page, download the `古今東西おきつね物語.7z` file. Place it wherever is convenient, then extract it with 7-Zip. Keep the extracted folder open and ready.<br>
-If you would like to verify the download of 古今東西おきつね物語.7z, its SHA-256 output should be: `92a1fd4e7d4ef57b74227238b6ac9ce04fd83a64ba5cdf06f348c64a34d83c5a`.
+If you would like to verify the download of 古今東西おきつね物語.7z, its SHA-256 output should be: `3437860ad5fa3a85f8aaf9a6335675fabb13140aa7306f008dcc6e16c6104091`.
 
 
 ### 3. Verify integrity of game files and open.
