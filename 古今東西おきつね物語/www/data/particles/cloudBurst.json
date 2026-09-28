@@ -1,0 +1,1 @@
+{"alpha":{"start":0.8,"end":1},"scale":{"start":0.4,"end":2},"speed":{"start":900,"end":1800},"startRotation":{"min":20,"max":160},"spawnType":"point","lifetime":{"min":0.8,"max":1},"pos":{"x":24,"y":24},"frequency":0.03,"emitterLifetime":0.5,"maxParticles":2000,"addAtBack":true,"spawnChance":1,"particlesPerWave":18,"particleSpacing":0,"angleStart":0,"noRotation":true}
