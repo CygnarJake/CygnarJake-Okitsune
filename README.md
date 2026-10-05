@@ -18,28 +18,33 @@ If you don't already have it, install 7-Zip at https://www.7-zip.org/. If you're
 
 ### 2. Download and extract 古今東西おきつね物語.7z
 From this GitHub page, download the `古今東西おきつね物語.7z` file. Place it wherever is convenient, then extract it with 7-Zip. Keep the extracted folder open and ready.<br>
-If you would like to verify the download of 古今東西おきつね物語.7z, its SHA-256 output should be: `4bafb546bcf84b7ce6a28f39f9f1c34b4e83c98128c9dc03f2f306970d259287`.
+If you would like to verify the download of 古今東西おきつね物語.7z, its SHA-256 output should be: `39c1ccc229d28703f437aa9943411b1c0c81e55daba055cf5597e8a68a459996`.
 
 
 ### 3. Verify integrity of game files and open.
-a. Hover over the game's icon in the left panel of your Steam library.<br>
-b. `Properties...` > `Installed Files` > `Verify integrity of game files`.<br>
-c. Again, hover over the game's icon in the left panel of you Steam library. `Manage` > `Browse local files`. This should open `古今東西おきつね物語` or `古今東西おきつね物語 Demo`.<br>
+1. Hover over the game's icon in the left panel of your Steam library.<br>
+2. `Properties...` > `Installed Files` > `Verify integrity of game files`.<br>
+3. Again, hover over the game's icon in the left panel of you Steam library. `Manage` > `Browse local files`. This should open `古今東西おきつね物語` or `古今東西おきつね物語 Demo`.<br>
 
 If you're translating this webpage into a different language than English, the exact button text may be different.
 
 
 ### 4. Cut and paste extracted 7z
-Select all files in the folder that was extracted from the 7z file. Cut and paste them into the main game folder - either `古今東西おきつね物語` or `古今東西おきつね物語 Demo`. When prompted, choose to overwrite all duplicate files.<br><br>
+Select all files in the folder that was extracted from the 7z file. Cut/Copy and paste them into the main game folder - either `古今東西おきつね物語` or `古今東西おきつね物語 Demo`. When prompted, choose to overwrite all duplicate files.<br><br>
 	* Note that the extracted folder is caled "古今東西おきつね物語" too. Don't confuse it with the actual folder of the game in your Steam library.<br>
 	* It does not matter which language the game is set to, so long as it is in the vanilla state of any of its official language releases (Japanese, English, Simplified Chinese).<br>
 	* If installing to the demo version of the game rather than the full paid version, not all data files will be loaded.
 
 
 ### 5. Confirm installation and how to update
-Installation is now complete. On the full version of the game, a popup should appear to inform you that the mod has fully installed. If you own the full version and are not getting a proper install, try deleting all files within `古今東西おきつね物語` (ctrl + a then delete) after backing up `古今東西おきつね物語` > `www` > `save` somewhere else on your computer if you have any save data that you don't want to lose. Then, again verify the integrity of game files by following step 3 a and b. Cut and paste all files from the extracted 7z file once more and try again.
+Installation is now complete. On the full version of the game, a popup should appear to inform you that the mod has fully installed.
 
-Likewise, if you wish to update the mod to a newer version that I may have released: verify file integrity through Steam, download the new `古今東西おきつね物語.7z`, extract it and cut & paste it once more. The Steam integrity must be verified for any mod updates as the mod will be confused if the vanilla files are not present and default to a demo-version install.
+If you own the full version and are not getting a proper install:
+1. Back up `古今東西おきつね物語` > `www` > `save` somewhere else on your computer if you have any save data that you don't want to lose.<br>
+2. Delete all files within `古今東西おきつね物語` then again verify the integrity of game files by following step 3 (Verify integrity of game files and open).<br>
+3. Copy and paste all files from the extracted 7z file once more and try again.<br>
+
+To update to a newer version of the mod, a button labled "Update Mod" is provided on the title screen. If it doe not work, try following the three steps above to redo the manual installation.
 
 
 ### Can I use my save file from the vanilla game?

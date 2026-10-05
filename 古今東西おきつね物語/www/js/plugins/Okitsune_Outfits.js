@@ -1017,7 +1017,7 @@
     const _ImageManager_loadBitmap = ImageManager.loadBitmap;
 	ImageManager.loadBitmap = function (folder, filename, hue, smooth) {
 		if (!filename) return _ImageManager_loadBitmap.call(this, folder, filename, hue, smooth);
-		const key = folder + '\u0000' + filename;
+		const key = folder + '\0' + filename;
 
 		//getOrInsertComputed would fulfill the resolved logic in one line, but it is not supported in NW.js v0.103.1, the most recent release for Greenworks (v0.22.0).
 		//const resolved = outfitImageCache.getOrInsertComputed(key, () => resolveOutfitFilename(folder, filename));

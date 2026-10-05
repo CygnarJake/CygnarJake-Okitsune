@@ -1,3 +1,9 @@
+10/04/2026
+	- Trying to significantly reduce complexity of updating the mod.
+		* Players no longer need to revert their files THEN redownload the mod.
+		* An "Update Mod" button has been added to the menu.
+	- GG Doggie
+
 09/27/2026
 	- New Game+ is now a feature. You keep leaves, food, fish and gold. Which outfits you've unlocked persist across New Game+, which is more obvious than how it was set up before. Kohaku now may reach up to 18 max health through multiple runs.
 
