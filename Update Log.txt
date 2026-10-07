@@ -1,3 +1,6 @@
+10/06/2026
+	- Added Ralsei outfit for Kokuri. Only standing images as of now.
+
 10/04/2026
 	- Trying to significantly reduce complexity of updating the mod.
 		* Players no longer need to revert their files THEN redownload the mod.
