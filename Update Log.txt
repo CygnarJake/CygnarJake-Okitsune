@@ -1,3 +1,6 @@
+10/07/2026
+	- Fixed Ralsei outfit's name only being in Japanese.
+
 10/06/2026
 	- Added Ralsei outfit for Kokuri. Only standing images as of now.
 
