@@ -296,46 +296,6 @@
     // Core Functions for Outfit Status and Storage
     //=================================================================================
 
-	const _ConfigManager_makeData = ConfigManager.makeData;
-	ConfigManager.makeData = function () {
-		const config = _ConfigManager_makeData.call(this);
-		const existing = this.OkitsuneOutfits || {};
-		config.OkitsuneOutfits = {
-			permanentUnlocks: existing.permanentUnlocks || [],
-			permanentActives: existing.permanentActives || {}
-		};
-		return config;
-	};
-
-	const _ConfigManager_applyData = ConfigManager.applyData;
-	ConfigManager.applyData = function (config) {
-		_ConfigManager_applyData.call(this, config);
-		const saved = config.OkitsuneOutfits || {};
-		this.OkitsuneOutfits = {
-			permanentUnlocks: Array.isArray(saved.permanentUnlocks) ? saved.permanentUnlocks : [],
-			permanentActives: typeof saved.permanentActives === 'object' ? saved.permanentActives : {}
-		};
-	};
-
-	function getPermanentUnlocks() {
-		return (ConfigManager.OkitsuneOutfits && ConfigManager.OkitsuneOutfits.permanentUnlocks) || [];
-	}
-
-	function addToPermanentUnlocks(actorId, name) {
-		const permanent = getPermanentUnlocks();
-		if (!permanent.some(e => e.actorId === actorId && e.name === name)) {
-			permanent.push({
-				actorId,
-				name
-			});
-			ConfigManager.save();
-		}
-	}
-
-	function setPermanentActive(actorId, name) {
-        ConfigManager.OkitsuneOutfits.permanentActives[actorId] = name;
-        ConfigManager.save();
-    }
 
 	//---------------------------
 	// Save specific unlock and active storage.
@@ -362,10 +322,10 @@
 			const store = getSaveStore();
 			store.push({
 				actorId,
-				name
+				name,
+				isActive: false
 			});
 			setSaveStore(store);
-			addToPermanentUnlocks(actorId, name);
 		}
 	}
 
@@ -381,45 +341,32 @@
 
 	function relockAllOutfits() {
 		setSaveStore([]);
-		deactivateAllOutfits();
-	}
-
-	function getActiveStore() {
-		if ($gameSystem._okitsuneActiveOutfits == null) $gameSystem._okitsuneActiveOutfits = {};
-		return $gameSystem._okitsuneActiveOutfits;
-	}
-
-	function setActiveStore(obj) {
-		$gameSystem._okitsuneActiveOutfits = obj;
 	}
 
 	function getActiveOutfit(actorId) {
-		return getActiveStore()[actorId] || null;
+		const entry = getSaveStore().find(e => e.actorId === actorId && e.isActive);
+		return entry ? entry.name : null;
 	}
 
 	function activateOutfit(actorId, name) {
-		const store = getActiveStore();
-		store[actorId] = name;
-		setActiveStore(store);
-		setPermanentActive(actorId, name);
+		const store = getSaveStore().map(e =>
+			e.actorId === actorId ? { ...e, isActive: e.name === name } : e
+		);
+		setSaveStore(store);
 		invalidateOutfitImageCache();
 	}
 
 	function deactivateOutfit(actorId) {
-		const store = getActiveStore();
-		store[actorId] = null;
-		setActiveStore(store);
-		setPermanentActive(actorId, null);
+		const store = getSaveStore().map(e =>
+			e.actorId === actorId ? { ...e, isActive: false } : e
+		);
+		setSaveStore(store);
 		invalidateOutfitImageCache();
 	}
 
 	function deactivateAllOutfits() {
-		const store = {};
-		Object.keys(actorOutfits).forEach(actorId => {
-			store[actorId] = null;
-			setPermanentActive(Number(actorId), null);
-		});
-		setActiveStore(store);
+		const store = getSaveStore().map(e => ({ ...e, isActive: false }));
+		setSaveStore(store);
 		invalidateOutfitImageCache();
 	}
 
