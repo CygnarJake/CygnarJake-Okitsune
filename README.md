@@ -54,7 +54,7 @@ Yes. You can install the mod and load your existing save just as before. However
 All of the files within `古今東西おきつね物語.7z` are the files in the `古今東西おきつね物語` folder on this GitHub page. The 7z file is used as I experienced issues with some of the large files not downloading correctly with GitHub's standard "Download ZIP" from the Code button. If you do not encounter such issues, you could also download that folder directly.<br>
 
 ### Outfit List
-If you would like to contribute, Outfit List.txt is a text file listing each image file that characters (currently only Kohaku and Kokuri) appear in and would be expected to have some form of change to them. In the future, I'll update this list to include the rest of the characters and probably format it into something more nice than plain text. I may also create a list listing images with Japanese characters in them in case somebody making translation patch images would like to change them as the Korean version does.
+If you would like to contribute, Outfit List.xlsx lists each image file that characters (currently only Kohaku and Kokuri) appear in and might be expected to have some form of change to them.
 
 ---
 
